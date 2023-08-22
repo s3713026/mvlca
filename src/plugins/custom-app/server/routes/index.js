@@ -9,8 +9,19 @@
 //   },
   
 // ];
-"use strict";
+// "use strict";
 
-module.exports = {
-  "content-api": require('./content-api')
-};
+// module.exports = {
+//   "content-api": require('./content-api')
+// };
+module.exports = [
+  {
+    method: 'GET',
+    path: '/',
+    handler: 'Netcore.customapi',
+    config: {
+      policies: [],
+    },
+  },
+  
+];
