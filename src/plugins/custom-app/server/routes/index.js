@@ -1,16 +1,16 @@
-module.exports = [
-  {
-    method: 'GET',
-    path: '/',
-    handler: 'myController.index',
-    config: {
-      policies: [],
-    },
-  },
+// module.exports = [
+//   {
+//     method: 'GET',
+//     path: '/',
+//     handler: 'myController.index',
+//     config: {
+//       policies: [],
+//     },
+//   },
   
-];
-// "use strict";
+// ];
+"use strict";
 
-// module.exports = {
-//   "content-api": require('./content-api')
-// };
+module.exports = {
+  "content-api": require('./content-api')
+};
