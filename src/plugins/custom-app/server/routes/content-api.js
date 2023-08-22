@@ -7,8 +7,8 @@ module.exports = {
     routes: [
         {
             method: "GET",
-            path:"/custom-api",
-            handler:"custom-app.customAPI",
+            path:"/customapi",
+            handler:"netcore.customapi",
             config:{
                 policies:[]
             }
