@@ -8,7 +8,7 @@ module.exports = {
         {
             method: "GET",
             path:"/customapi",
-            handler:"netcore.customapi",
+            handler:"Netcore.customapi",
             config:{
                 policies:[]
             }
