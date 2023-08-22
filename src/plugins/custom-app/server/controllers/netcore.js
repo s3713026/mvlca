@@ -11,43 +11,54 @@ var netcoreQueue = Queue('netcore_queue', { redis: { port: port, host: host, pas
 
 module.exports ={
     async customApi(ctx) {
-        // ctx.body = strapi
-        //   .plugin('netcore')
-        //   .service('NetcoreServices')
-        //   .getResultLogging();
         ctx.body = "AKADIGITAL";
+    
+    
         //Logging
         let request_urls = ctx.request.url;
         let request_method = ctx.request.method;
         let request_record = "Lmaoez@gmail.com";
         console.log("URL", request_urls);
         console.log("METHOD", request_method);
-        console.log("Header", ctx.request.header)
+        console.log("Header", ctx.request.header);
+    
     
         ctx.body = ctx.request.header;
     
+    
         try {
-          if (request_record != "") {
-            console.log("RECORD", request_record)
-            //Đẩy dât lên strapi
+          if (request_record != "" && ctx.response.status == 200) {
             let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
               data: {
-                record: request_record,
+                status: ctx.response.status + " - POST SUCCESS",
                 method: request_method,
                 url: request_urls
               }
-            }); 
-    
-            console.log("DATA:", logging)
+            });
           } else {
-            console.log("METHOD does not execute")
+            let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
+              data: {
+                status: ctx.response.status + " - POST FAIL",
+                method: request_method,
+                url: request_urls
+              }
+            });
           }
         } catch (error) {
-          console.error(error);
+          let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
+            data: {
+              status: ctx.response.status + " - POST FAIL",
+              method: request_method,
+              url: request_urls
+            }
+          });
         }
+    
     
         let statusCode = ctx.response.status;
         console.log(statusCode);
         console.log("typeof statusCode:", typeof statusCode);
+      }
+    
       }    
 }
