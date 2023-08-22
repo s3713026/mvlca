@@ -30,7 +30,7 @@ module.exports ={
           if (request_record != "") {
             console.log("RECORD", request_record)
             //Đẩy dât lên strapi
-            let logging = await strapi.db.query('plugin::netcore.netcorelead').create({
+            let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
               data: {
                 record: request_record,
                 method: request_method,
