@@ -8,7 +8,7 @@ module.exports = {
         {
             method: "GET",
             path:"/customapi",
-            handler:"netcore.customAPI",
+            handler:"custom-app.customAPI",
             config:{
                 policies:[]
             }
