@@ -36,7 +36,7 @@ module.exports ={
                 method: request_method,
                 url: request_urls
               }
-            });
+            }); 
     
             console.log("DATA:", logging)
           } else {
