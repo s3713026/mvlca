@@ -7,7 +7,7 @@ module.exports = {
     routes: [
         {
             method: "GET",
-            path:"/customApi",
+            path:"/custom-api",
             handler:"custom-app.customAPI",
             config:{
                 policies:[]
