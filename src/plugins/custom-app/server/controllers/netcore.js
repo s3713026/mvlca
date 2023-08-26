@@ -117,8 +117,7 @@ module.exports ={
       console.log(ctx.request.header);
 
       const getcustomer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
-        offset:15,
-        limit:1
+        select: ['email', 'mobile'],
       })
       console.log(getcustomer)
       ctx.body = getcustomer;
