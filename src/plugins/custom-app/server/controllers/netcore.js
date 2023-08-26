@@ -130,11 +130,15 @@ module.exports ={
       });
       let i =0;
       let j = i +1;
+      let count = 0;
       for(i =0; i < customer.length;i++){
         for(j = i+1;j<customer.length;j++){
-          console.log(customer[0].Agent_Mail)
           if(customer[i].Agent_Mail ==customer[j].Agent_Mail){
-            console.log(customer[i].Agent_Mail);
+            if (count >= 2){
+              console.log(customer[i])
+            }else{
+              count = count +1;  
+            }
           }
         }
       }
