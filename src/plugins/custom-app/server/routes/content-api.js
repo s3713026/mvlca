@@ -20,6 +20,14 @@ module.exports = {
             config:{
                 policies:[]
             }
+        },
+        {
+            method:"GET",
+            path:"/getcustomer",
+            handler: "Netcore.get_cus_for_agent",
+            config:{
+                policies:[]
+            }
         }
     ]
 }
