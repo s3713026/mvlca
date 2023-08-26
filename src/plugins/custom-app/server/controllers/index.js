@@ -5,6 +5,6 @@ const Netcore = require('./netcore');
 
 module.exports = {
   myController,
-  // Netcore,
+  Netcore,
 
 };
