@@ -139,8 +139,8 @@ module.exports ={
         }
       }
 
-      console.log(count);
-      ctx.body = count;
+      // console.log(count);
+      // ctx.body = count;
     }
           
 }
