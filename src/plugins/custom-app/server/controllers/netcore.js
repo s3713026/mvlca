@@ -132,9 +132,9 @@ module.exports ={
       let j = i +1;
       for(i =0; i < customer.length;i++){
         for(j = i+1;j<customer.length;j++){
-          console.log(customer[0].agent_mail)
-          if(customer[i].agent_mail ==customer[j].agent_mail){
-            console.log(customer[i].agent_mail);
+          console.log(customer[0].Agent_Mail)
+          if(customer[i].Agent_Mail ==customer[j].Agent_Mail){
+            console.log(customer[i].Agent_Mail);
           }
         }
       }
