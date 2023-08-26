@@ -110,6 +110,18 @@ module.exports ={
           }
         });    
       }
+    },
+
+    async get_cus_for_agent(ctx){
+      console.log(ctx.request.body);
+      console.log(ctx.request.header);
+
+      const getcustomer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
+        offset:15,
+        limit:1
+      })
+
+      ctx.body = getcustomer;
     }
     
           
