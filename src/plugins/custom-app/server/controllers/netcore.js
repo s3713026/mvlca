@@ -17,9 +17,9 @@ module.exports ={
       
     
         //Logging
-        let request_urls = ctx.request.url;
-        let request_method = ctx.request.method;
-        let request_record = "Lmaoez@gmail.com";
+        let request_urls = "Truong phu cuong";
+        let request_method = "0349305195";
+        let request_record = "phucuong200297@gmail.com";
         console.log("URL", request_urls);
         console.log("METHOD", request_method);
         console.log("Header", ctx.request.header);
@@ -32,17 +32,17 @@ module.exports ={
           if (request_record != "" && ctx.response.status == 200) {
             let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
               data: {
-                status: ctx.response.status + " - POST SUCCESS",
-                method: request_method,
-                url: request_urls
+                email: request_record,
+                mobile: request_method,
+                full_name: request_urls
               }
             });
           } else {
             let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
               data: {
-                status: ctx.response.status + " - POST FAIL",
-                method: request_method,
-                url: request_urls
+                email: request_record,
+                mobile: request_method,
+                full_name: request_urls
               }
             });
           }
@@ -60,6 +60,7 @@ module.exports ={
         let statusCode = ctx.response.status;
         console.log(statusCode);
         console.log("typeof statusCode:", typeof statusCode);
+        
       }
     
           
