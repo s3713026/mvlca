@@ -125,10 +125,20 @@ module.exports ={
     
     async send_cus(ctx){
     
-      const count= await strapi.db.query('plugin::custom-app.netcorelead').findWithCount({
+      const customer= await strapi.db.query('plugin::custom-app.netcorelead').findMany({
         select: ['email','mobile','agent_mail'],
-        
-      })
+      });
+      let i =0;
+      let j = i +1;
+      for(i =0; i < customer.length;i++){
+        for(j = i+1;j<customer.length;j++){
+          console.log(customer[0].agent_mail)
+          if(customer[i].agent_mail ==customer[j].agent_mail){
+            console.log(customer[i].agent_mail);
+          }
+        }
+      }
+
       console.log(count);
       ctx.body = count;
     }
