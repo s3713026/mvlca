@@ -32,17 +32,17 @@ module.exports ={
           if (request_record != "" && ctx.response.status == 200) {
             let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
               data: {
-                email: request_record,
-                mobile: request_method,
-                full_name: request_urls
+                Email: request_record,
+                Mobile: request_method,
+                Full_Name: request_urls
               }
             });
           } else {
             let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
               data: {
-                email: request_record,
-                mobile: request_method,
-                full_name: request_urls
+                Email: request_record,
+                Mobile: request_method,
+                Full_Name: request_urls
               }
             });
           }
