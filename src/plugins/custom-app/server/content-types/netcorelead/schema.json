@@ -32,14 +32,6 @@
             "type": "string",
             "maxLentgh": 100
         },
-        "City": {
-            "type": "string",
-            "maxLentgh": 100
-        },
-        "Lead_Source": {
-            "type": "string",
-            "maxLentgh": 100
-        },
         "Submitted_Date": {
             "type": "datetime"
         },
@@ -47,13 +39,9 @@
             "type": "string",
             "maxLentgh": 100
         },
-        "List_Name": {
+        "Agent_Mail": {
             "type": "string",
             "maxLentgh": 100
-        },
-        "isGet": {
-            "type": "boolean",
-            "default": false
         }
     }
 }

@@ -83,7 +83,26 @@ module.exports ={
         let request_record = ctx.request["x-forwarded-for"];
 
         let data_body = ctx.request.body.data;
-        console.log(data_body)
+        let Email ='';
+        let Mobile ='';
+        let Agent_Email='';
+        let Full_Name ='';
+
+        Email = data_body.voolatechsmt[0].att_params.EMAIL;
+        Mobile = data_body.voolatechsmt[0].att_params.MOBILE;
+        Agent_Email = data_body.voolatechsmt[0].att_params.FULL_NAME;
+        
+        let data_list =[];
+
+        data_list.push({
+          'customer': Email,
+          'customer_mobile':Mobile,
+          'agent': Agent_Email
+        })
+
+        console.log(data_list)
+    
+    
       }
     }
     
