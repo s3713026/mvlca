@@ -92,7 +92,7 @@ module.exports ={
 
         Email = data_body.voolatechsmt[0].att_params.EMAIL;
         Mobile = data_body.voolatechsmt[0].att_params.MOBILE;
-        Agent_Email = data_body.voolatechsmt[0].att_params.FULL_NAME;
+        Agent_Email = data_body.voolatechsmt[0].att_params.FIRST_NAME;
         
         let data_list =[];
 
