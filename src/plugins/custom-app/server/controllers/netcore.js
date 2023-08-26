@@ -120,7 +120,7 @@ module.exports ={
         offset:15,
         limit:1
       })
-
+      console.log(getcustomer)
       ctx.body = getcustomer;
     }
     
