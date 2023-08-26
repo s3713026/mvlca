@@ -11,8 +11,10 @@ var netcoreQueue = Queue('netcore_queue', { redis: { port: port, host: host, pas
 
 module.exports ={
     async customapi(ctx) {
+        console.log(ctx.request.body);
+        console.log(ctx.request.header);
         ctx.body = "AKADIGITAL";
-    
+      
     
         //Logging
         let request_urls = ctx.request.url;
