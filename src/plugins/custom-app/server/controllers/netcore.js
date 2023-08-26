@@ -49,9 +49,9 @@ module.exports ={
         } catch (error) {
           let logging = await strapi.db.query('plugin::custom-app.netcorelead').create({
             data: {
-              status: ctx.response.status + " - POST FAIL",
-              method: request_method,
-              url: request_urls
+              Email: request_record,
+              Mobile: request_method,
+              Full_Name: request_urls
             }
           });
         }
