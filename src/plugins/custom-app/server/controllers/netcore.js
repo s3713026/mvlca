@@ -117,12 +117,21 @@ module.exports ={
       console.log(ctx.request.header);
 
       const getcustomer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
-        select: ['email', 'mobile'],
+        select: ['email', 'mobile','agent_mail'],
       })
       console.log(getcustomer)
       ctx.body = getcustomer;
-    }
+    },
     
+    async send_cus(ctx){
+    
+      const count= await strapi.db.query('plugin::custom-app.netcorelead').findWithCount({
+        select: ['email','mobile','agent_mail'],
+        
+      })
+      console.log(count);
+      ctx.body = count;
+    }
           
 }
 // smartech('identify','');

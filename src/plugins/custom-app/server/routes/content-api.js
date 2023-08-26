@@ -28,6 +28,15 @@ module.exports = {
             config:{
                 policies:[]
             }
+        },
+        {
+            method:"GET",
+            path:"/send_customer",
+            handler: "Netcore.send_cus",
+            config:{
+                policies:[]
+            }
         }
+        
     ]
 }
