@@ -82,7 +82,8 @@ module.exports ={
         let request_method = ctx.request.method;
         let request_record = ctx.request["x-forwarded-for"];
 
-        let data_body = ctx.request.body.data;
+        let data = ctx.request.body.data;
+        let data_body = JSON.parse(data);
         console.log(data_body);
         let Email ='';
         let Mobile ='';
