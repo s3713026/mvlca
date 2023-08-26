@@ -65,7 +65,7 @@ module.exports ={
 
     async send(ctx){
       ctx.body = "AKADIGITAL"
-      var basic_auth_panel = Buffer.from(ctx.request.header.authorization.split("")[1],'base64').toString();
+      var basic_auth_panel = Buffer.from(ctx.request.header.authorization.split(" ")[1],'base64').toString();
       var arr = basic_auth_panel.split(":");
       const basic_auth = await strapi.db.query('plugin::users-permissions.user').findOne({
         where: {
