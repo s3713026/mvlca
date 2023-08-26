@@ -83,6 +83,7 @@ module.exports ={
         let request_record = ctx.request["x-forwarded-for"];
 
         let data_body = ctx.request.body.data;
+        console.log(data_body);
         let Email ='';
         let Mobile ='';
         let Agent_Email='';
@@ -108,3 +109,10 @@ module.exports ={
     
           
 }
+// smartech('identify','');
+// smartech('contact', 'LIST IDENTIFIER', {
+//   'pk^email': '',
+//   'mobile': '0123456789',
+//   'FIRST_NAME': 'mucoki@gmail.com'
+// });
+// smartech('dispatch','home screen',{});
