@@ -10,7 +10,7 @@ let password = strapi.config.get('server.redis.password', '');
 var netcoreQueue = Queue('netcore_queue', { redis: { port: port, host: host, password: password } });
 
 module.exports ={
-    async customApi(ctx) {
+    async customapi(ctx) {
         ctx.body = "AKADIGITAL";
     
     
