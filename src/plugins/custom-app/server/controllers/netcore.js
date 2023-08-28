@@ -119,7 +119,7 @@ module.exports ={
       console.log(ctx.request.header);
 
       const getcustomer = await strapi.db.query('plugin::custom-app.agent').findMany({
-        
+        populate:true
       })
       console.log(getcustomer)
       ctx.body = getcustomer;
