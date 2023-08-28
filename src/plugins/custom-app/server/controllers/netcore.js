@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const pluginName = 'netcore';
 
 var Queue = require('bull');
+const { netcorelead } = require("../content-types");
 
 let port = strapi.config.get('server.redis.port', '6379');
 let host = strapi.config.get('server.redis.host', '127.0.0.1');
@@ -118,7 +119,7 @@ module.exports ={
       console.log(ctx.request.header);
 
       const getcustomer = await strapi.db.query('plugin::custom-app.agent').findMany({
-        select: ['email', 'mobile','netcorelead'],
+        
       })
       console.log(getcustomer)
       ctx.body = getcustomer;
