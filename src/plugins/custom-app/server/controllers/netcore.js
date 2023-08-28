@@ -106,7 +106,8 @@ module.exports ={
           data: {
             'Email': Email,
             'Mobile':Mobile,
-            'Agent_Mail': Agent_Email
+            'Agent_Mail': Agent_Email,
+            'agent': Agent_Email
           }
         });    
       }
