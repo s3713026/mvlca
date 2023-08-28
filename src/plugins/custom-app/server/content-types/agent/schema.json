@@ -43,7 +43,7 @@
     "netcorelead": {
           "type": "relation",
           "relation": "oneToOne",
-          "target": "api::category.category",
+          "target": "api::custom-app.netcorelead",
           "inversedBy": "agent"
     }
 
