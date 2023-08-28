@@ -101,7 +101,7 @@ module.exports ={
           'customer_mobile':Mobile,
           'agent': Agent_Email
         })
-
+        console.log(data_list);
         let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
           data: {
             'Email': Email,
