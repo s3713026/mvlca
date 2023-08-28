@@ -45,7 +45,7 @@
         },
         "agent": {
             "type": "relation",
-            "relation": "oneToOne",
+            "relation": "manyToOne",
             "target": "plugin::custom-app.agent",
             "inversedBy": "netcorelead"
         }
