@@ -42,12 +42,12 @@
         "Agent_Mail": {
             "type": "string",
             "maxLentgh": 100
+        },
+        "agent": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::custom-app.agent",
+            "inversedBy": "netcorelead"
         }
-    },
-    "agent": {
-        "type": "relation",
-        "relation": "oneToOne",
-        "target": "api::custom-app.agent",
-        "inversedBy": "netcorelead"
     }
 }

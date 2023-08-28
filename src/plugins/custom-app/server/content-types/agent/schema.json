@@ -1,12 +1,12 @@
 {
     "kind": "collectionType",
     "collectionName": "agents",
-    "info":{
+    "info": {
         "singularName": "agent",
         "pluralName": "agents",
         "displayName": "Agents"
     },
-    "options":{
+    "options": {
         "draftAndPublish": false,
         "comment": ""
     },
@@ -38,13 +38,12 @@
         "Journey_Name": {
             "type": "string",
             "maxLentgh": 100
+        },
+        "netcorelead": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::custom-app.netcorelead",
+            "inversedBy": "agent"
         }
-    },    
-    "netcorelead": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::custom-app.netcorelead",
-          "inversedBy": "agent"
     }
-
 }
