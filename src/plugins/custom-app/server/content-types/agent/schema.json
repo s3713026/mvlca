@@ -2,7 +2,7 @@
     "kind": "collectionType",
     "collectionName": "agents",
     "info":{
-        "sigularName": "agent",
+        "singularName": "agent",
         "pluralName": "agents",
         "displayName": "Agents"
     },
