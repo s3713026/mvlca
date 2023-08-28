@@ -4,7 +4,7 @@
     "info":{
         "sigularName": "agent",
         "pluralName": "agents",
-        "displayName": "Netcore Leads"
+        "displayName": "Agents"
     },
     "options":{
         "draftAndPublish": false,
