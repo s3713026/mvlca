@@ -117,7 +117,7 @@ module.exports ={
       console.log(ctx.request.body);
       console.log(ctx.request.header);
 
-      const getcustomer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
+      const getcustomer = await strapi.db.query('plugin::custom-app.agent').findMany({
         select: ['email', 'mobile','agent_mail','agent'],
       })
       console.log(getcustomer)
@@ -127,22 +127,9 @@ module.exports ={
     async send_cus(ctx){
     
       const customer= await strapi.db.query('plugin::custom-app.netcorelead').findMany({
-        select: ['email','mobile','agent_mail'],
+        select: ['email','mobile','netcorelead'],
       });
-      let i =0;
-      let j = i +1;
-      let count = 0;
-      for(i =0; i < customer.length;i++){
-        for(j = i+1;j<customer.length;j++){
-          if(customer[i].Agent_Mail ==customer[j].Agent_Mail){
-            if (count >= 2){
-              console.log(customer[i])
-            }else{
-              count = count +1;  
-            }
-          }
-        }
-      }
+      
 
       // console.log(count);
       // ctx.body = count;
