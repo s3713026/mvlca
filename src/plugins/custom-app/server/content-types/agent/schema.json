@@ -39,6 +39,12 @@
             "type": "string",
             "maxLentgh": 100
         }
+    },    
+    "netcorelead": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::category.category",
+          "inversedBy": "agent"
     }
 
 }
