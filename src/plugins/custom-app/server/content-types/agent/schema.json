@@ -43,7 +43,7 @@
             "type": "relation",
             "relation": "oneToMany",
             "target": "plugin::custom-app.netcorelead",
-            "inversedBy": "agent"
+            "mappedBy": "agent"
         }
     }
 }
