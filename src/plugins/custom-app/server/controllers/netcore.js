@@ -112,29 +112,29 @@ module.exports = {
       })
       console.log(getAgent[0].Email);
       let i = 0;
-      for (i = 0; i <= getAgent.length; i++) {
-        if (getAgent[i].Email == Agent_Email) {
-          const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
-            where: { id: getAgent[i].id },
-            data: {
-              'netcorelead': {
-                'Email': Email,
-                'Mobile': Mobile
-              }
-            },
-          });
-        } else {
-          let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
-            data: {
-              'Email': Agent_Email,
-              'netcorelead': {
-                'Email': Email,
-                'Mobile': Mobile
-              }
-            }
-          });
-        }
-      }
+      // for (i = 0; i <= getAgent.length; i++) {
+      //   if (getAgent[i].Email == Agent_Email) {
+      //     const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
+      //       where: { id: getAgent[i].id },
+      //       data: {
+      //         'netcorelead': {
+      //           'Email': Email,
+      //           'Mobile': Mobile
+      //         }
+      //       },
+      //     });
+      //   } else {
+      //     let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
+      //       data: {
+      //         'Email': Agent_Email,
+      //         'netcorelead': {
+      //           'Email': Email,
+      //           'Mobile': Mobile
+      //         }
+      //       }
+      //     });
+      //   }
+      // }
 
 
       let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
