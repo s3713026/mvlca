@@ -85,8 +85,9 @@ module.exports ={
         let request_record = ctx.request["x-forwarded-for"];
 
         let data = ctx.request.body.data;
+        console.log('Raw data here',data)
         let data_body = JSON.parse(data);
-        console.log(data_body.att_params);
+        console.log("Data in here:",data_body);
         let Email ='';
         let Mobile ='';
         let Agent_Email='';
