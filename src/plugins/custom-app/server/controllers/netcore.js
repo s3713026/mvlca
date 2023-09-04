@@ -105,13 +105,12 @@ module.exports = {
         'customer_mobile': Mobile,
         'agent': Agent_Email
       })
-      console.log(data_list);
+      // console.log(data_list);
 
       const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
         select: ['email', 'id'],
       })
-      let data_agent = JSON.parse(getAgent);
-      console.log(data_agent);
+      console.log(getAgent);
       let i = 0;
       for (i = 0; i <= getAgent.length; i++) {
         if (getAgent[i].Email == Agent_Email) {
