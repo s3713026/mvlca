@@ -90,11 +90,12 @@ module.exports ={
         let Email ='';
         let Mobile ='';
         let Agent_Email='';
-        let Full_Name ='';
+        let Agent_Id ='';
 
         Email = data_body.voolatechsmt[0].att_params.EMAIL;
         Mobile = data_body.voolatechsmt[0].att_params.MOBILE;
-        Agent_Email = data_body.voolatechsmt[0].att_params.FIRST_NAME;
+        Agent_Email = data_body.voolatechsmt[0].att_params.AGENT_MAIL;
+        Agent_Id = data_body.voolatechsmt[0].att_params.AGENT_ID;
         
         let data_list =[];
 
@@ -104,14 +105,23 @@ module.exports ={
           'agent': Agent_Email
         })
         console.log(data_list);
+
+        const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
+          select:['email'],
+        })
+        
+
         let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
           data: {
             'Email': Email,
             'Mobile':Mobile,
-            'Agent_Mail': Agent_Email,
-            'agent': Agent_Email
           }
         });    
+        let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
+          data: {
+            'Email': Agent_Email,
+          }
+        }); 
       }
     },
 
