@@ -112,7 +112,7 @@ module.exports = {
       })
       let i = 0;
       for (i = 0; i <= getAgent.length; i++) {
-        console.log(getAgent[0])
+        console.log(JSON.parse(getAgent[0]).Email)
         if (getAgent[i].Email == Agent_Email) {
           const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
             where: { id: getAgent[i].id },
