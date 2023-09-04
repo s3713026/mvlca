@@ -86,7 +86,7 @@ module.exports ={
 
         let data = ctx.request.body.data;
         let data_body = JSON.parse(data);
-        console.log(data_body);
+        console.log(data_body.att_params);
         let Email ='';
         let Mobile ='';
         let Agent_Email='';
