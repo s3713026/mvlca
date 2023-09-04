@@ -110,7 +110,7 @@ module.exports = {
       const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
         select: ['email', 'id'],
       })
-      console.log(getAgent[0].data.Email);
+      console.log(getAgent[0].data);
       let i = 0;
       for (i = 0; i <= getAgent.length; i++) {
         if (getAgent[i].Email == Agent_Email) {
