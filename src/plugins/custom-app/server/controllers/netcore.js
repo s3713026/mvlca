@@ -113,7 +113,7 @@ module.exports = {
       let i = 0;
       for (i = 0; i <= getAgent.length; i++) {
         if (getAgent[i].Email == Agent_Email) {
-          const updateAgent = await strapi.db.query('api::blog.article').update({
+          const updateAgent = await strapi.db.query('api::custom-app.agent').update({
             where: { id: getAgent[i].id },
             data: {
               'netcorelead': {
@@ -148,7 +148,7 @@ module.exports = {
 
     }
   },
-
+//----------------------------------------------
   async get_cus_for_agent(ctx) {
     console.log(ctx.request.body);
     console.log(ctx.request.header);
@@ -160,7 +160,7 @@ module.exports = {
     console.log(getcustomer)
     ctx.body = getcustomer;
   },
-
+//---------------------------------------------------------
   async send_cus(ctx) {
 
     const customer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
