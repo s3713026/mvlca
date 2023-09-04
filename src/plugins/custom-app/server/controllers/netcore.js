@@ -113,7 +113,7 @@ module.exports = {
       let i = 0;
       for (i = 0; i <= getAgent.length; i++) {
         if (getAgent[i].Email == Agent_Email) {
-          const updateAgent = await strapi.db.query('api::custom-app.agent').update({
+          const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
             where: { id: getAgent[i].id },
             data: {
               'netcorelead': {
