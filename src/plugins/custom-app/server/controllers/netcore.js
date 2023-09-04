@@ -119,7 +119,7 @@ module.exports ={
       console.log(ctx.request.header);
 
       const getcustomer = await strapi.db.query('plugin::custom-app.agent').findMany({
-        // populate:{netcorelead:true}
+        populate:{netcorelead:true}
       })
       console.log(getcustomer)
       ctx.body = getcustomer;
@@ -128,7 +128,7 @@ module.exports ={
     async send_cus(ctx){
     
       const customer= await strapi.db.query('plugin::custom-app.netcorelead').findMany({
-        select: ['email','mobile'],
+        select: ['email','mobile','agent'],
       });
       console.log(customer);
 
