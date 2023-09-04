@@ -110,6 +110,7 @@ module.exports ={
         const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
           select:['email'],
         })
+        console.log(getAgent);
         
 
         let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
