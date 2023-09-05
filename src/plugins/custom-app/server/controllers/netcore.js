@@ -124,8 +124,8 @@ module.exports = {
           //     }
           //   },
           // });
-        } else {
-          console.log('Create New')
+        
+          
           // let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
           //   data: {
           //     'Email': Agent_Email,
@@ -135,8 +135,8 @@ module.exports = {
           //     }
           //   }
           // });
-        }
-      }
+        
+      }console.log('Create New')
 
 
       let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
