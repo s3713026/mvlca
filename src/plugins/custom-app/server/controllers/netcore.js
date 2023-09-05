@@ -124,7 +124,7 @@ module.exports = {
           //     }
           //   },
           // });
-        
+        }
           
           // let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
           //   data: {
@@ -136,8 +136,9 @@ module.exports = {
           //   }
           // });
         
-      }console.log('Create New')
-
+      }
+        console.log('Create New');
+      
 
       let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
         data: {
