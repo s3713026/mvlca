@@ -111,7 +111,7 @@ module.exports = {
         select: ['email', 'id'],
       })
       let i = 0;
-      for (i == 0; i <= getAgent.length; i++) {
+      for (i = 0; i <= getAgent.length; i++) {
         if (getAgent[i].Email === Agent_Email) {
           console.log(getAgent[i].Email)
           console.log(getAgent[i].id)
@@ -125,7 +125,6 @@ module.exports = {
           //   },
           // });
         }
-          
           // let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
           //   data: {
           //     'Email': Agent_Email,
@@ -135,20 +134,18 @@ module.exports = {
           //     }
           //   }
           // });
-        
-      }
-        console.log('Create New');
+      } console.log('Create New');
       
 
-      let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
-        data: {
-          'Email': Email,
-          'Mobile': Mobile,
-          'agent': {
-            'Email': Agent_Email,
-          }
-        }
-      });
+      // let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
+      //   data: {
+      //     'Email': Email,
+      //     'Mobile': Mobile,
+      //     'agent': {
+      //       'Email': Agent_Email,
+      //     }
+      //   }
+      // });
 
     }
   },
