@@ -113,8 +113,8 @@ module.exports = {
       console.log(getAgent[0].Email);
       let i = 0;
       for (i == 0; i <= getAgent.length; i++) {
-        console.log(getAgent[i].Email)
-        // if (getAgent[i].Email == Agent_Email) {
+        if (getAgent[i].Email == Agent_Email) {
+          console.log(getAgent[i].Email)
           // const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
           //   where: { id: getAgent[i].id },
           //   data: {
@@ -124,7 +124,8 @@ module.exports = {
           //     }
           //   },
           // });
-        // } else {
+        } else {
+          console.log('Else')
           // let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
           //   data: {
           //     'Email': Agent_Email,
@@ -134,7 +135,7 @@ module.exports = {
           //     }
           //   }
           // });
-        // }
+        }
       }
 
 
