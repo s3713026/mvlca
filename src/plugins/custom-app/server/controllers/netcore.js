@@ -114,8 +114,9 @@ module.exports = {
         // Check if the email address is contained in the list.
         for (let i = 0; i < emailList.length; i++) {
           if (email === emailList[i].Email) {
-            console.log(emailList[i].Email)
-            console.log(emailList[i].id)
+            console.log('Update')
+            // console.log(emailList[i].Email)
+            // console.log(emailList[i].id)
           }
         }
         console.log('Create New');
