@@ -109,26 +109,58 @@ module.exports = {
           'Mobile': Mobile,
         }
       });
-
+      let listEmail =[]
       // Create + update agent
-      async function checkEmailInList(email, emailList) {
-        // Check if the email address is contained in the agent table.
-        for (let i = 0; i < emailList.length; i++) {
-          if (email === emailList[i].Email) {
-            console.log('Update')
-            const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
-            where: { id: getAgent[i].id },
-            data: {
-              'netcorelead': {
-                connect:[
-                  {id:entry.id}
-                ]
-              }
-            },
-          });
-          }
-        }
-         console.log('Create');
+      // async function checkEmailInList(email, emailList) {
+      //   // Check if the email address is contained in the agent table.
+      //   for (let i = 0; i < emailList.length; i++) {
+      //     if (email === emailList[i].Email) {
+      //       console.log('Update')
+      //       const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
+      //       where: { id: getAgent[i].id },
+      //       data: {
+      //         'netcorelead': {
+      //           connect:[
+      //             {id:entry.id}
+      //           ]
+      //         }
+      //       },
+      //     });
+      //     }
+      //   }
+      //    console.log('Create');
+      //    let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
+      //       data: {
+      //         'Email': Agent_Email,
+      //         'netcorelead': {
+      //           connect:[
+      //             {id:entry.id}
+      //           ]
+      //         }
+      //       }
+      //     });
+      // }
+
+      // checkEmailInList(Agent_Email,getAgent)
+
+      for (let i = 0; i < getAgent.length; i++) {
+        listEmail.push(getAgent[i].Email)
+      }
+
+      if(listEmail.includes(Agent_Email)){
+        console.log('Update')
+              const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
+              where: { Email: Agent_Email },
+              data: {
+                'netcorelead': {
+                  connect:[
+                    {id:entry.id}
+                  ]
+                }
+              },
+            });
+      }else{
+        console.log('Create');
          let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
             data: {
               'Email': Agent_Email,
@@ -140,9 +172,6 @@ module.exports = {
             }
           });
       }
-
-      checkEmailInList(Agent_Email,getAgent)
-      
       
 
       
