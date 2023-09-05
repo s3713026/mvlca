@@ -121,7 +121,7 @@ module.exports = {
             data: {
               'netcorelead': {
                 connect:[
-                  {id:entry.id, position: {end: true}}
+                  {id:entry.id}
                 ]
               }
             },
@@ -134,7 +134,7 @@ module.exports = {
               'Email': Agent_Email,
               'netcorelead': {
                 connect:[
-                  {id:entry.id, position: {end: true}}
+                  {id:entry.id}
                 ]
               }
             }
