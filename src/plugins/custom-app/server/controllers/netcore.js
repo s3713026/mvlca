@@ -135,34 +135,11 @@ module.exports = {
               }
             }
           });
+          console.log(entry2)
       }
 
       checkEmailInList(Agent_Email,getAgent)
-      // let i = 0;
-      // for (i = 0; i <= getAgent.length; i++) {
-      //   if (getAgent[i].Email === Agent_Email) {
-          // console.log(getAgent[i].Email)
-          // console.log(getAgent[i].id)
-          // const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
-          //   where: { id: getAgent[i].id },
-          //   data: {
-          //     'netcorelead': {
-          //       'Email': Email,
-          //       'Mobile': Mobile
-          //     }
-          //   },
-          // });
-        // }
-          // let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
-          //   data: {
-          //     'Email': Agent_Email,
-          //     'netcorelead': {
-          //       'Email': Email,
-          //       'Mobile': Mobile
-          //     }
-          //   }
-          // });
-      // } 
+      
       
 
       let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
@@ -174,6 +151,7 @@ module.exports = {
           }
         }
       });
+      console.log(entry);
 
     }
   },
