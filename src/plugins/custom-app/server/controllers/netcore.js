@@ -110,11 +110,23 @@ module.exports = {
       const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
         select: ['email', 'id'],
       })
-      let i = 0;
-      for (i = 0; i <= getAgent.length; i++) {
-        if (getAgent[i].Email === Agent_Email) {
-          console.log(getAgent[i].Email)
-          console.log(getAgent[i].id)
+      function checkEmailInList(email, emailList) {
+        // Check if the email address is contained in the list.
+        for (let i = 0; i < emailList.length; i++) {
+          if (email === emailList[i].Email) {
+            console.log(emailList[i].Email)
+            console.log(emailList[i].id)
+          }
+        }
+        console.log('Create New');
+      }
+
+      checkEmailInList(Agent_Email,getAgent)
+      // let i = 0;
+      // for (i = 0; i <= getAgent.length; i++) {
+      //   if (getAgent[i].Email === Agent_Email) {
+          // console.log(getAgent[i].Email)
+          // console.log(getAgent[i].id)
           // const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
           //   where: { id: getAgent[i].id },
           //   data: {
@@ -124,7 +136,7 @@ module.exports = {
           //     }
           //   },
           // });
-        }
+        // }
           // let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
           //   data: {
           //     'Email': Agent_Email,
@@ -134,7 +146,7 @@ module.exports = {
           //     }
           //   }
           // });
-      } console.log('Create New');
+      // } 
       
 
       // let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
