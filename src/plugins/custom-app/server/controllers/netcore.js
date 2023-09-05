@@ -110,6 +110,7 @@ module.exports = {
       const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
         select: ['email', 'id'],
       })
+      let agent_id = ''
       async function checkEmailInList(email, emailList) {
         // Check if the email address is contained in the list.
         for (let i = 0; i < emailList.length; i++) {
@@ -119,23 +120,28 @@ module.exports = {
             where: { id: getAgent[i].id },
             data: {
               'netcorelead': {
-                'Email': Email,
-                'Mobile': Mobile
+                connect:[
+                  {id:entry.id, position: {end: true}}
+                ]
               }
             },
           });
+          agent_id = getAgent[i].id
+          console.log('ID Agent',agent_id)
           }
         }
          let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
             data: {
               'Email': Agent_Email,
               'netcorelead': {
-                'Email': Email,
-                'Mobile': Mobile
+                connect:[
+                  {id:entry.id, position: {end: true}}
+                ]
               }
             }
           });
-          console.log(entry2)
+          agent_id = entry2.id
+          console.log('ID Agent',agent_id)
       }
 
       checkEmailInList(Agent_Email,getAgent)
@@ -147,11 +153,13 @@ module.exports = {
           'Email': Email,
           'Mobile': Mobile,
           'agent': {
-            'Email': Agent_Email,
+            connect:[
+              {id: agent_id}
+            ]
           }
         }
       });
-      console.log(entry);
+      console.log('id customer',entry.id);
 
     }
   },
