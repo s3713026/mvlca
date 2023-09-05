@@ -115,15 +115,16 @@ module.exports = {
         data: {
           'Email': Email,
           'Mobile': Mobile,
-          'agent': {
-            connect:[
-              {id: agent_id}
-            ]
-          }
+          // 'agent': {
+          //   connect:[
+          //     {id: agent_id}
+          //   ]
+          // }
         }
       });
 
       console.log('id customer',entry.id);
+      
       let agent_id
       async function checkEmailInList(email, emailList) {
         // Check if the email address is contained in the list.
