@@ -128,6 +128,7 @@ module.exports = {
           });
           }
         }
+         console.log('Create');
          let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
             data: {
               'Email': Agent_Email,
