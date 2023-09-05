@@ -165,15 +165,15 @@ module.exports = {
       // } 
       
 
-      // let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
-      //   data: {
-      //     'Email': Email,
-      //     'Mobile': Mobile,
-      //     'agent': {
-      //       'Email': Agent_Email,
-      //     }
-      //   }
-      // });
+      let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
+        data: {
+          'Email': Email,
+          'Mobile': Mobile,
+          'agent': {
+            'Email': Agent_Email,
+          }
+        }
+      });
 
     }
   },
