@@ -17,7 +17,7 @@ function check_num_customer(){
   })
 };
 module.exports = {
-  check_num_customer
+  check_num_customer();
   // async customapi(ctx) {
   //     console.log(ctx.request.body);
   //     console.log(ctx.request.header);
