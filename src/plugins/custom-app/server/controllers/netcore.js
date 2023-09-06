@@ -15,6 +15,7 @@ function check_num_customer(){
     select: ['email'],
     populate: { netcorelead: true }
   })
+  console.log(getcustomer)
 };
 module.exports = {
   check_num_customer();
