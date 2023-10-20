@@ -10,15 +10,9 @@ let host = strapi.config.get('server.redis.host', '127.0.0.1');
 let password = strapi.config.get('server.redis.password', '');
 
 var netcoreQueue = Queue('netcore_queue', { redis: { port: port, host: host, password: password } });
-function check_num_customer(){
-  const getcustomer = strapi.db.query('plugin::custom-app.agent').findMany({
-    select: ['email'],
-    populate: { netcorelead: true }
-  })
-  console.log(getcustomer)
-};
+
 module.exports = {
-  check_num_customer();
+
   // async customapi(ctx) {
   //     console.log(ctx.request.body);
   //     console.log(ctx.request.header);
