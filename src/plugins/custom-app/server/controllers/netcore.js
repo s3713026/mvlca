@@ -111,9 +111,9 @@ module.exports = {
         }
       });
       let listEmail =[]
-
+      // GET CUSTOMER
       const getcustomer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
-        select: ['email'],
+        select: ['Email','Mobile'],
         
       })
       console.log(getcustomer)
