@@ -100,26 +100,15 @@ module.exports = {
       Agent_Email = data_body.voolatechsmt[0].att_params.AGENT_MAIL;
       Agent_Id = data_body.voolatechsmt[0].att_params.AGENT_ID;
 
+      const entries = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
+        select: ['email', 'mobile'],
+        populate: { agent: true },
+      });
       // const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
       //   select: ['email', 'id'],
       // })
-
-      // Create user data 
-      let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
-        data: {
-          'Email': Email,
-          'Mobile': Mobile,
-        }
-      });
-      let listEmail =[]
-      // GET CUSTOMER
-      const getcustomer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
-        select: ['Email','Mobile'],
-        
-      })
-      console.log("ALREADY RUN")
-      console.log(entry)
-      ctx.body = getcustomer;
+      console.log(entries);
+      
       // Create + update agent
       // async function checkEmailInList(email, emailList) {
       //   // Check if the email address is contained in the agent table.
