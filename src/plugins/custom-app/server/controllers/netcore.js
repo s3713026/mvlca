@@ -99,9 +99,9 @@ module.exports = {
       Agent_Email = data_body.voolatechsmt[0].att_params.AGENT_MAIL;
       Agent_Id = data_body.voolatechsmt[0].att_params.AGENT_ID;
 
-      const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
-        select: ['email', 'id'],
-      })
+      // const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
+      //   select: ['email', 'id'],
+      // })
 
       // Create user data 
       let entry = await strapi.db.query('plugin::custom-app.netcorelead').create({
@@ -111,6 +111,13 @@ module.exports = {
         }
       });
       let listEmail =[]
+
+      const getcustomer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
+        select: ['email'],
+        populate: { netcorelead: true }
+      })
+      console.log(getcustomer)
+      ctx.body = getcustomer;
       // Create + update agent
       // async function checkEmailInList(email, emailList) {
       //   // Check if the email address is contained in the agent table.
@@ -144,35 +151,35 @@ module.exports = {
 
       // checkEmailInList(Agent_Email,getAgent)
 
-      for (let i = 0; i < getAgent.length; i++) {
-        listEmail.push(getAgent[i].Email)
-      }
+      // for (let i = 0; i < getAgent.length; i++) {
+      //   listEmail.push(getAgent[i].Email)
+      // }
 
-      if(listEmail.includes(Agent_Email)){
-        console.log('Update')
-              const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
-              where: { Email: Agent_Email },
-              data: {
-                'netcorelead': {
-                  connect:[
-                    {id:entry.id}
-                  ]
-                }
-              },
-            });
-      }else{
-        console.log('Create');
-         let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
-            data: {
-              'Email': Agent_Email,
-              'netcorelead': {
-                connect:[
-                  {id:entry.id}
-                ]
-              }
-            }
-          });
-      }
+      // if(listEmail.includes(Agent_Email)){
+      //   console.log('Update')
+      //         const updateAgent = await strapi.db.query('plugin::custom-app.agent').update({
+      //         where: { Email: Agent_Email },
+      //         data: {
+      //           'netcorelead': {
+      //             connect:[
+      //               {id:entry.id}
+      //             ]
+      //           }
+      //         },
+      //       });
+      // }else{
+      //   console.log('Create');
+      //    let entry2 = await strapi.db.query('plugin::custom-app.agent').create({
+      //       data: {
+      //         'Email': Agent_Email,
+      //         'netcorelead': {
+      //           connect:[
+      //             {id:entry.id}
+      //           ]
+      //         }
+      //       }
+      //     });
+      // }
     }
   },
 
@@ -207,6 +214,7 @@ module.exports = {
 // smartech('contact', 'LIST IDENTIFIER', {
 //   'pk^email': '',
 //   'mobile': '0123456789',
-//   'FIRST_NAME': 'mucoki@gmail.com'
+//   'FIRST_NAME': 'mucoki@gmail.com',
+//   'AGENT_EMAIL': 'phucuong200297@gmail.com'
 // });
 // smartech('dispatch','home screen',{});
