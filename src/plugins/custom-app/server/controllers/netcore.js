@@ -107,7 +107,7 @@ module.exports = {
       // const getAgent = await strapi.db.query('plugin::custom-app.agent').findMany({
       //   select: ['email', 'id'],
       // })
-      console.log(entries);
+      console.log('Test:',entries.toString());
       
       // Create + update agent
       // async function checkEmailInList(email, emailList) {
