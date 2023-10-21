@@ -192,7 +192,7 @@ module.exports = {
 
     const customer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
       select: ['email', 'mobile'],
-      // populate: { agent: true }
+      populate: { agent: true }
     });
     console.log(customer);
 
