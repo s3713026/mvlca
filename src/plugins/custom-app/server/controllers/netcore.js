@@ -118,7 +118,7 @@ module.exports = {
         
       })
       console.log("ALREADY RUN")
-      console.log(getcustomer)
+      console.log(entry)
       ctx.body = getcustomer;
       // Create + update agent
       // async function checkEmailInList(email, emailList) {
