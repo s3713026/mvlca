@@ -195,7 +195,7 @@ module.exports = {
       populate: { agent: true }
     });
     console.log(customer);
-
+    ctx.body = customer;
     // console.log(count);
     // ctx.body = count;
   }
