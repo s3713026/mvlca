@@ -191,7 +191,7 @@ module.exports = {
   async send_cus(ctx) {
 
     const customer = await strapi.db.query('plugin::custom-app.netcorelead').findMany({
-      select: ['email','MOBILE','AGENT'],
+      select: ['Email','Mobile','Agent'],
       populate: { agent: true }
     });
     console.log(customer);
