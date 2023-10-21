@@ -116,6 +116,7 @@ module.exports = {
         select: ['Email','Mobile'],
         
       })
+      console.log("ALREADY RUN")
       console.log(getcustomer)
       ctx.body = getcustomer;
       // Create + update agent
