@@ -67,6 +67,7 @@ module.exports = {
   //   }
 
   async send(ctx) {
+    console.log("ALREADY RUN")
     ctx.body = "AKADIGITAL"
     var basic_auth_panel = Buffer.from(ctx.request.header.authorization.split(" ")[1], 'base64').toString();
     var arr = basic_auth_panel.split(":");
